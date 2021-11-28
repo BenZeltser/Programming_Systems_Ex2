@@ -26,7 +26,6 @@ int getMatrix() {
 			printf("Enter the next Matrix value:");
 			scanf_s("%d", &temp);
 			Matrix[i][j] = temp;
-			printf("%d", Matrix[i][j]);
 		}
 	}
 
@@ -36,9 +35,9 @@ int getMatrix() {
 
 void isConnected(int i, int j) {
 	if (Matrix[i][j] <= 0)
-		printf("%d", FALSE);
+		printf("FALSE /n");
 	else
-		printf("%d", TRUE);
+		printf("TRUE /n");
 
 }
 

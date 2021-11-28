@@ -7,8 +7,8 @@
 
 #define TRUE 1
 #define FALSE 0
-#define ROWS 2
-#define COLUMNS 2
+#define ROWS 10
+#define COLUMNS 10
 int Matrix[ROWS][COLUMNS]; //Global Scope Matrix
 
 main() {
@@ -17,7 +17,7 @@ main() {
 
 	while (TRUE) {
 		printf("Enter Command: ");
-		scanf_s("%c", &command); //Assume input is Valid
+		scanf_s("%c", &command, 1); //Assume input is Valid
 
 		if (command == 'A') {
 			getMatrix();
@@ -39,7 +39,7 @@ main() {
 			scanf_s("%d", &i);
 			printf("Enter j:");
 			scanf_s("%d", &j);
-
+			shortestPath(i, j);
 		}
 
 		else if (command == 'D') {
