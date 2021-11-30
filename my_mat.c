@@ -24,7 +24,7 @@ int getMatrix() {
 	for (i = 0; i < ROWS; i++) {
 		for (j = 0; j < COLUMNS; j++) {
 			printf("Enter the next Matrix value:");
-			scanf_s("%d", &temp);
+			scanf("%d", &temp);
 			Matrix[i][j] = temp;
 		}
 	}
@@ -34,10 +34,11 @@ int getMatrix() {
 }
 
 void isConnected(int i, int j) {
+	printf("%d \n", Matrix[i][j]);
 	if (Matrix[i][j] <= 0)
-		printf("FALSE /n");
+		printf("FALSE \n");
 	else
-		printf("TRUE /n");
+		printf("TRUE \n");
 
 }
 
@@ -46,21 +47,30 @@ void shortestPath(int row, int collum) {
 		for (int i = 1; i <= ROWS; i++) {
 			for (int j = 1; j <= ROWS; j++) {
 				int tempNum = Matrix[i][k] + Matrix[k][j];
-				Matrix[i][j] = getMinNumber(Matrix[i][j], tempNum);
+				if ((Matrix[i][j] == 0 && Matrix[i][k] == 0 && Matrix[k][j] == 0) || (Matrix[i][j] > 0 && Matrix[i][k] == 0 && Matrix[k][j] == 0)) {
+					Matrix[i][j] = 0;
+				}
+				else if ((Matrix[i][j] == 0 && Matrix[i][k] > 0 && Matrix[k][j] > 0)) {
+					Matrix[i][j] = tempNum;
+				}
+				else if (Matrix[i][j] > 0 && Matrix[i][k] > 0 && Matrix[k][j] > 0) {
+					Matrix[i][j] = getMinNumber(Matrix[i][j], tempNum);
+				}
+				}
+				
 			}
 		}
-	}
 	printDistance(Matrix[row][collum]);
 }
 
 void printDistance(int dis) {
 	if (dis>0)
 	{
-		printf("The distance is %d /n", dis);
+		printf("The distance is %d \n", dis);
 	}
 	else
 	{
-		printf("The distance is %d /n", -1);
+		printf("The distance is %d \n", -1);
 	}
 }
 

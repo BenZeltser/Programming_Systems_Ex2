@@ -17,7 +17,7 @@ main() {
 
 	while (TRUE) {
 		printf("Enter Command: ");
-		scanf_s("%c", &command, 1); //Assume input is Valid
+		scanf("%c", &command); //Assume input is Valid
 
 		if (command == 'A') {
 			getMatrix();
@@ -25,19 +25,19 @@ main() {
 
 		else if (command == 'B') {
 			int i, j;
-			printf("Enter i:");
-			scanf_s("%d", &i);
-			printf("Enter j:");
-			scanf_s("%d", &j);
+			printf("Enter i: ");
+			scanf("%d", &i);
+			printf("Enter j: ");
+			scanf("%d", &j);
 
 			isConnected(i, j);
 		}
 
 		else if (command == 'C') {
 			int i, j;
-			printf("Enter i:");
+			printf("Enter i: ");
 			scanf_s("%d", &i);
-			printf("Enter j:");
+			printf("Enter j: ");
 			scanf_s("%d", &j);
 			shortestPath(i, j);
 		}
