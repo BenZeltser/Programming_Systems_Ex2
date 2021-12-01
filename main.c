@@ -5,6 +5,8 @@
 #include "my_mat.h"
 
 
+
+
 #define TRUE 1
 #define FALSE 0
 #define ROWS 10
@@ -18,7 +20,7 @@ int main() {
 
 	while (index==0) 
 	{
-		printf("Enter Command:\n ");
+		printf("Enter Command:");
 		scanf("%c", &command); //Assume input is Valid
 		switch (command)
 		{
