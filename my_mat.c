@@ -34,7 +34,6 @@ int getMatrix() {
 }
 
 void isConnected(int i, int j) {
-	printf("%d \n", Matrix[i][j]);
 	if (Matrix[i][j] <= 0)
 		printf("FALSE \n");
 	else
